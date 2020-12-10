@@ -1,49 +1,30 @@
+import { Component } from "react";
 import React from "react";
-import PropTypes from "prop-types";
 
-// function App() {
-//   const dom = (
-//     <input
-//       type="submit"
-//       onClick={() => {
-//         console.log("クリックされました");
-//       }}
-//     />
-//   );
-//   return (
-//     <React.Fragment>
-//       <div>Hello, world!</div>
-//       <div>{dom}</div>
-//     </React.Fragment>
-//   );
-// }
+const App = () => <Counter></Counter>;
 
-const App = () => {
-  const profiles = [
-    { name: "Taro", age: 18 },
-    { name: "Bob", age: "24" },
-    { age: 10 },
-  ];
-  return (
-    <div>
-      {profiles.map((profile, index) => {
-        return <User name={profile.name} age={profile.age} key={index} />;
-      })}
-    </div>
-  );
-};
-const User = (props) => {
-  return (
-    <div>
-      Hi, I'm {props.name}! {props.age} years old!
-    </div>
-  );
-};
-User.defaultProps = {
-  name: "anonymous",
-};
-User.propTypes = {
-  age: PropTypes.number,
-};
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  handlePlusButton = () => this.setState({ count: this.state.count + 1 });
+  handleMinusButton = () => this.setState({ count: this.state.count - 1 });
+  handleMultiplyButton = () => this.setState({ count: this.state.count * 2 });
+  handleDivideButton = () => this.setState({ count: this.state.count / 2 });
+
+  render() {
+    return (
+      <React.Fragment>
+        <div>counter: {this.state.count}</div>
+        <button onClick={this.handlePlusButton}>+1</button>
+        <button onClick={this.handleMinusButton}>-1</button>
+        <button onClick={this.handleMultiplyButton}>*2</button>
+        <button onClick={this.handleDivideButton}>/2</button>
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;

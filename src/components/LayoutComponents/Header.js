@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Hamburger from "./Hamburger";
 
-class BlockTable extends Component {
+class Header extends Component {
   render() {
     return (
       <div className="l-header">
@@ -14,4 +14,4 @@ class BlockTable extends Component {
   }
 }
 
-export default BlockTable;
+export default Header;

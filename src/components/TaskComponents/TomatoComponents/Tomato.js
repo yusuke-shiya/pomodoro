@@ -9,7 +9,7 @@ class TomatoTable extends Component {
           <div className="p-tomato__content__time">{this.props.time}分</div>
         </div>
         <img
-          className="p-tomato__image"
+          className="p-tomato__img"
           src={`${process.env.PUBLIC_URL}/tomato.svg`}
           alt=""
         />

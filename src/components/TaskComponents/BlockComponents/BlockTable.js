@@ -6,20 +6,21 @@ class BlockTable extends Component {
   render() {
     const props = this.props;
     const blocks = [];
-    props.tasks.forEach((name, index) => {
+    props.data.forEach((name, index) => {
       blocks.push(
         <Block
           name={name}
           key={index}
           index={index}
-          handleUpdateTask={props.handleUpdateTask}
+          target={this.props.target}
+          handleUpdate={props.handleUpdate}
         />
       );
     });
     return (
       <div className="p-blockTable">
         {blocks}
-        <Add handleAddTask={props.handleAddTask}></Add>
+        <Add handleAdd={props.handleAdd} target={this.props.target}></Add>
       </div>
     );
   }

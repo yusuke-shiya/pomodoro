@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class Add extends Component {
   render() {
-    const handleAddTask = this.props.handleAddTask;
+    const handleAdd = this.props.handleAdd;
     return (
-      <div onClick={handleAddTask} className="p-add">
+      <div onClick={handleAdd.bind(null, this.props.target)} className="p-add">
         <img
           className="p-add__icon"
           src={`${process.env.PUBLIC_URL}/plus.svg`}

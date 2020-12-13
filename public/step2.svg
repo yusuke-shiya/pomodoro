@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="107" height="68" viewBox="0 0 107 68">
+  <g id="グループ_36" data-name="グループ 36" transform="translate(-112)">
+    <rect id="長方形_3" data-name="長方形 3" width="107" height="68" transform="translate(112)" fill="#ffe283"/>
+    <text id="STEP2" transform="translate(141 19)" fill="#707070" font-size="15" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN"><tspan x="0" y="0">STEP2</tspan></text>
+    <text id="_" data-name="" transform="translate(147 55)" fill="#707070" font-size="30" font-family="FontAwesome5Free-Solid, 'Font Awesome 5 Free'"><tspan x="0" y="0"></tspan></text>
+    <g id="多角形_4" data-name="多角形 4" transform="translate(215.5 28.5) rotate(90)" fill="#707070">
+      <path d="M 9.150241851806641 8.5 L 0.8497577905654907 8.5 L 5 1.029564023017883 L 9.150241851806641 8.5 Z" stroke="none"/>
+      <path d="M 5 2.059127807617188 L 1.699515342712402 8 L 8.300484657287598 8 L 5 2.059127807617188 M 5 0 L 10 9 L 0 9 L 5 0 Z" stroke="none" fill="#707070"/>
+    </g>
+  </g>
+</svg>

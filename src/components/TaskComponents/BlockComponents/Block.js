@@ -9,7 +9,11 @@ class Block extends Component {
           type="text"
           defaultValue={this.props.name}
           onChange={(e) => {
-            this.props.handleUpdateTask(this.props.index, e.target.value);
+            this.props.handleUpdate(
+              this.props.target,
+              this.props.index,
+              e.target.value
+            );
           }}
           className="p-block__input"
         />

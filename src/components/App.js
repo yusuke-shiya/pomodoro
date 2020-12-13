@@ -1,39 +1,90 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Header from "./LayoutComponents/Header";
-import BlockTable from "./TaskComponents/BlockComponents/BlockTable";
-import TomatoTable from "./TaskComponents/TomatoComponents/TomatoTable";
+import Task from "./pageComponents/Task";
+import Treat from "./pageComponents/Treat";
+import Steps from "./LayoutComponents/Steps";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tasks: ["新規タスク"],
+      treats: ["ごほうび"],
     };
   }
 
-  handleAddTask = () => {
-    this.setState({
-      tasks: this.state.tasks.concat("新規タスク"),
-    });
+  handleAdd = (target) => {
+    switch (target) {
+      case "tasks":
+        this.setState({
+          tasks: this.state.tasks.concat("新規タスク"),
+        });
+        break;
+      case "treats":
+        this.setState({
+          treats: this.state.treats.concat("ごほうび"),
+        });
+        break;
+      default:
+        break;
+    }
   };
-  handleUpdateTask = (index, value) => {
-    const newTasks = this.state.tasks.map((task, loopIndex) => {
+  handleUpdate = (target, index, value) => {
+    const newState = this.state[target].map((task, loopIndex) => {
       return loopIndex === index ? value : task;
     });
-    this.setState({ tasks: newTasks });
+    switch (target) {
+      case "tasks":
+        this.setState({
+          tasks: newState,
+        });
+        break;
+      case "treats":
+        this.setState({
+          treats: newState,
+        });
+        break;
+      default:
+        break;
+    }
   };
 
   render() {
     return (
       <div className="l-main">
         <Header />
-        <h2 className="p-pageTitle">今から何をしますか？</h2>
-        <BlockTable
-          handleAddTask={this.handleAddTask}
-          handleUpdateTask={this.handleUpdateTask}
-          tasks={this.state.tasks}
-        />
-        <TomatoTable tasks={this.state.tasks} />
+        <BrowserRouter>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <Task
+                  handleAdd={this.handleAdd}
+                  handleUpdate={this.handleUpdate}
+                  tasks={this.state.tasks}
+                  target="tasks"
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/treat"
+              render={() => (
+                <Treat
+                  handleAdd={this.handleAdd}
+                  handleUpdate={this.handleUpdate}
+                  tasks={this.state.tasks}
+                  treats={this.state.treats}
+                  target={"treats"}
+                />
+              )}
+            />
+          </Switch>
+          <Steps tasks={this.state.tasks} props={this.state.treats} />
+        </BrowserRouter>
       </div>
     );
   }

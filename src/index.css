@@ -53,6 +53,7 @@ code {
   margin: auto;
   background: #fff;
   overflow: scroll;
+  box-sizing: border-box;
 }
 
 .p-pageTitle {
@@ -107,6 +108,16 @@ code {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.p-tomato__image {
+.p-tomato__img {
   width: 100%;
+}
+
+.p-steps {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+.p-steps__item {
+  margin-right: 4px;
 }

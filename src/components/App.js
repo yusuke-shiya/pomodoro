@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./LayoutComponents/Header";
-import BlockTable from "./BlockComponents/BlockTable";
-import TomatoTable from "./TomatoComponents/TomatoTable";
+import BlockTable from "./TaskComponents/BlockComponents/BlockTable";
+import TomatoTable from "./TaskComponents/TomatoComponents/TomatoTable";
 
 class App extends Component {
   render() {

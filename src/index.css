@@ -68,11 +68,24 @@ code {
 }
 
 .p-block {
+  margin-bottom: 8px;
+}
+.p-block__input {
   border-radius: 13px;
   border: 1px solid #000;
   padding: 16px 28px;
   font-size: 20px;
-  margin-bottom: 8px;
+}
+.p-block__input:focus {
+  outline: none;
+}
+
+.p-add {
+  display: flex;
+  justify-content: center;
+}
+.p-add__icon {
+  width: 40px;
 }
 
 .p-tomatoTable {

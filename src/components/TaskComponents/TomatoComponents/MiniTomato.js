@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class Tomato extends Component {
+class MiniTomato extends Component {
   render() {
     return (
-      <div className="p-tomato">
+      <div className="p-tomato p-tomato--mini">
         <div className="p-tomato__content">
           <div className="p-tomato__content__name">{this.props.name}</div>
           <div className="p-tomato__content__time">{this.props.time}分</div>
@@ -18,4 +18,4 @@ class Tomato extends Component {
   }
 }
 
-export default Tomato;
+export default MiniTomato;

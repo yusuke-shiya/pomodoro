@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #eeeeee;
+  color: #707070;
 }
 
 html,
@@ -102,11 +103,24 @@ code {
   margin-top: 20px;
   width: calc(100% / 2 - 10px);
 }
+.p-tomato--mini {
+  width: calc(100% / 3 - 10px);
+  font-size: 12px;
+}
+.p-tomato--large {
+  width: 60%;
+  margin: 20px auto;
+}
 .p-tomato__content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+.p-tomato__content__time--large {
+  font-size: 40px;
 }
 .p-tomato__img {
   width: 100%;
@@ -120,4 +134,9 @@ code {
 }
 .p-steps__item {
   margin-right: 4px;
+}
+
+.p-start__icon {
+  display: block;
+  margin: auto;
 }

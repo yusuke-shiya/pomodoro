@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
-class Tomato extends Component {
+class Timer extends Component {
   render() {
+    const minute = this.props.time;
+    const second = ("0" + this.props.second).slice(-2);
+
     return (
-      <div className="p-tomato">
+      <div className="p-tomato p-tomato--large">
         <div className="p-tomato__content">
           <div className="p-tomato__content__name">{this.props.name}</div>
-          <div className="p-tomato__content__time">{this.props.time}分</div>
+          <div className="p-tomato__content__time p-tomato__content__time--large">
+            {minute}:{second}
+          </div>
         </div>
         <img
           className="p-tomato__img"
@@ -18,4 +23,4 @@ class Tomato extends Component {
   }
 }
 
-export default Tomato;
+export default Timer;

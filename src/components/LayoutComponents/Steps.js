@@ -12,7 +12,7 @@ class Steps extends Component {
       pathname: path,
       state: {
         tasks: this.props.tasks,
-        treats: this.props.tasks,
+        treats: this.props.treats,
       },
     });
   }
@@ -39,10 +39,20 @@ class Steps extends Component {
             alt=""
           />
         </div>
-        <div className="p-steps__item">
+        <div
+          className="p-steps__item"
+          onClick={this.handleClick.bind(null, "/timer")}
+        >
           <img
             className="p-steps__item__img"
             src={`${process.env.PUBLIC_URL}/step3.svg`}
+            alt=""
+          />
+        </div>
+        <div className="p-steps__item">
+          <img
+            className="p-steps__item__img"
+            src={`${process.env.PUBLIC_URL}/step4.svg`}
             alt=""
           />
         </div>

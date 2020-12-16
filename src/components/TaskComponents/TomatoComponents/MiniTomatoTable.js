@@ -6,12 +6,12 @@ class MiniTomatoTable extends Component {
     const props = this.props;
     const tomatos = [];
     props.tasks.forEach((name, index) => {
-      if (index) {
+      if (index || this.props.isBreak) {
         tomatos.push(<MiniTomato name={name} time={25} key={index} />);
       }
     });
 
-    return <div className="p-tomatoTable">{tomatos}</div>;
+    return <div className="p-tomatoTable p-tomatoTable--mini">{tomatos}</div>;
   }
 }
 

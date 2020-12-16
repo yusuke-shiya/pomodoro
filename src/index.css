@@ -52,6 +52,7 @@ code {
 .l-main {
   max-width: 375px;
   margin: auto;
+  padding-bottom: 80px;
   background: #fff;
   overflow: scroll;
   box-sizing: border-box;
@@ -97,6 +98,11 @@ code {
   width: 80%;
   margin: -20px auto 0;
 }
+.p-tomatoTable--mini::after {
+  content: "";
+  height: 0;
+  width: calc(100% / 3 - 10px);
+}
 
 .p-tomato {
   position: relative;
@@ -130,7 +136,9 @@ code {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 .p-steps__item {
   margin-right: 4px;
@@ -139,4 +147,29 @@ code {
 .p-start__icon {
   display: block;
   margin: auto;
+}
+
+.p-result {
+  width: 80%;
+  margin: auto;
+}
+.p-result__txt {
+  font-size: 24px;
+  font-weight: bold;
+}
+.p-result__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-result__content .p-tomato {
+  margin: 0 30px 0 0;
+}
+.p-result__content .p-tomato__img {
+  vertical-align: bottom;
+}
+.p-result__treasure__icon {
+  vertical-align: bottom;
+  height: 80px;
+  width: auto;
 }

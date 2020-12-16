@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Timer extends Component {
+class TimerTomato extends Component {
   render() {
     const minute = this.props.time;
     const second = ("0" + this.props.second).slice(-2);
@@ -23,4 +23,4 @@ class Timer extends Component {
   }
 }
 
-export default Timer;
+export default TimerTomato;

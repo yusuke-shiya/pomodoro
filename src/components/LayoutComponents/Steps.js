@@ -49,7 +49,10 @@ class Steps extends Component {
             alt=""
           />
         </div>
-        <div className="p-steps__item">
+        <div
+          className="p-steps__item"
+          onClick={this.handleClick.bind(null, "/break")}
+        >
           <img
             className="p-steps__item__img"
             src={`${process.env.PUBLIC_URL}/step4.svg`}

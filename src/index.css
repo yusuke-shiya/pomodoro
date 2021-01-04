@@ -9,6 +9,12 @@ body {
   color: #707070;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root,
@@ -50,9 +56,9 @@ code {
 }
 
 .l-main {
+  position: relative;
   max-width: 375px;
   margin: auto;
-  padding-bottom: 80px;
   background: #fff;
   overflow: scroll;
   box-sizing: border-box;
@@ -65,19 +71,33 @@ code {
   font-weight: normal;
 }
 
-.p-blockTable {
+.p-blockArea {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: calc(50% - 36px);
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: space-between;
   width: 80%;
-  margin: 0 auto 40px;
+}
+
+.p-blockTable {
+  width: 48%;
+  margin: 0 0 40px;
 }
 
 .p-block {
+  width: 100%;
   margin-bottom: 8px;
 }
 .p-block__input {
+  text-align: center;
+  width: 100%;
   border-radius: 13px;
   border: 1px solid #000;
-  padding: 16px 28px;
-  font-size: 20px;
+  padding: 10px 28px;
+  font-size: 16px;
 }
 .p-block__input:focus {
   outline: none;
@@ -95,9 +115,12 @@ code {
 .p-tomatoTable {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
   justify-content: space-between;
+  height: calc(50% - 100px);
   width: 80%;
   margin: -20px auto 0;
+  overflow: scroll;
 }
 .p-tomatoTable--mini::after {
   content: "";
@@ -109,6 +132,7 @@ code {
   position: relative;
   margin-top: 20px;
   width: calc(100% / 2 - 10px);
+  height: 10vw;
 }
 .p-tomato--mini {
   width: calc(100% / 3 - 10px);
@@ -173,4 +197,22 @@ code {
   vertical-align: bottom;
   height: 80px;
   width: auto;
+}
+
+.p-separate {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, calc(-50%));
+  text-align: center;
+  color: #000;
+}
+.p-separate::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #707070;
 }

@@ -148,6 +148,7 @@ class App extends Component {
                 handleAdd={this.handleAdd}
                 handleUpdate={this.handleUpdate}
                 tasks={this.state.tasks}
+                treats={this.state.treats}
                 target="tasks"
               />
             )}
@@ -201,7 +202,7 @@ class App extends Component {
             )}
           />
         </Switch>
-        <Steps tasks={this.state.tasks} treats={this.state.treats} />
+        {/* <Steps tasks={this.state.tasks} treats={this.state.treats} /> */}
       </div>
     );
   }

@@ -7,14 +7,22 @@ class Task extends Component {
   render() {
     return (
       <React.Fragment>
-        <h2 className="p-pageTitle">今から何をしますか？</h2>
-        <BlockTable
-          handleAdd={this.props.handleAdd}
-          handleUpdate={this.props.handleUpdate}
-          data={this.props.tasks}
-          target={this.props.target}
-        />
         <TomatoTable tasks={this.props.tasks} />
+        <div className="p-separate">▲今日のタスク▲</div>
+        <div className="p-blockArea">
+          <BlockTable
+            handleAdd={this.props.handleAdd}
+            handleUpdate={this.props.handleUpdate}
+            data={this.props.tasks}
+            target="tasks"
+          />
+          <BlockTable
+            handleAdd={this.props.handleAdd}
+            handleUpdate={this.props.handleUpdate}
+            data={this.props.treats}
+            target="treats"
+          />
+        </div>
       </React.Fragment>
     );
   }

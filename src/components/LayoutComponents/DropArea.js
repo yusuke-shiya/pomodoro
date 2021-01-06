@@ -1,26 +1,11 @@
 import React, { Component } from "react";
-import Block from "./Block";
-import Add from "../../LayoutComponents/Add";
+import TomatoTable from "../TaskComponents/TomatoComponents/TomatoTable";
 
 class DropArea extends Component {
   render() {
-    const props = this.props;
-    const blocks = [];
-    props.data.forEach((name, index) => {
-      blocks.push(
-        <Block
-          name={name}
-          key={index}
-          index={index}
-          target={this.props.target}
-          handleUpdate={props.handleUpdate}
-        />
-      );
-    });
     return (
-      <div className="p-blockTable">
-        {blocks}
-        <Add handleAdd={props.handleAdd} target={this.props.target}></Add>
+      <div className="p-dropArea">
+        <TomatoTable tasks={this.props.tasks} />
       </div>
     );
   }

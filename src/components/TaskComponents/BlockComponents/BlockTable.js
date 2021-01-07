@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Block from "./Block";
 import Add from "../../LayoutComponents/Add";
 
+import { DragDropContext } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
+
 class BlockTable extends Component {
   render() {
     const props = this.props;
@@ -14,6 +17,7 @@ class BlockTable extends Component {
           index={index}
           target={this.props.target}
           handleUpdate={props.handleUpdate}
+          onDrop={this.props.onDrop}
         />
       );
     });
@@ -26,4 +30,4 @@ class BlockTable extends Component {
   }
 }
 
-export default BlockTable;
+export default DragDropContext(HTML5Backend)(BlockTable);

@@ -6,7 +6,9 @@ import Task from "./pageComponents/Task";
 import Treat from "./pageComponents/Treat";
 import Timer from "./pageComponents/Timer";
 import Break from "./pageComponents/Break";
-import Steps from "./LayoutComponents/Steps";
+// import Steps from "./LayoutComponents/Steps";
+
+import SortableList from "./dnd/SortableList";
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +25,17 @@ class App extends Component {
       isBreak: false,
     };
   }
+
+  onDrop = (toId, fromId) => {
+    const items = this.state.tasks;
+    const toItem = items[toId];
+    const fromItem = items[fromId];
+    console.log("toItemは", toItem);
+    console.log("fromItemは", fromItem);
+    items[toId] = fromItem;
+    items[fromId] = toItem;
+    this.setState({ tasks: items });
+  };
 
   handleAdd = (target) => {
     switch (target) {
@@ -150,6 +163,7 @@ class App extends Component {
                 tasks={this.state.tasks}
                 treats={this.state.treats}
                 target="tasks"
+                onDrop={this.onDrop}
               />
             )}
           />
@@ -201,6 +215,7 @@ class App extends Component {
               />
             )}
           />
+          <Route exact path="/dnd" render={() => <SortableList />} />
         </Switch>
         {/* <Steps tasks={this.state.tasks} treats={this.state.treats} /> */}
       </div>

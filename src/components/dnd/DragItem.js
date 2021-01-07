@@ -23,8 +23,8 @@ const dropTarget = DropTarget(
     // drop callback
     drop(dropProps, monitor, dropComponent) {
       const dragProps = monitor.getItem();
-      if (dropProps.index !== dragProps.index) {
-        dragProps.onDrop(dragProps.index, dropProps.index);
+      if (dropProps.id !== dragProps.id) {
+        dragProps.onDrop(dragProps.id, dropProps.id);
       }
     },
   },
@@ -35,7 +35,7 @@ const dropTarget = DropTarget(
   }
 );
 
-class Block extends Component {
+class DragItem extends Component {
   getItemStyles() {
     const { isDragging } = this.props;
 
@@ -51,15 +51,7 @@ class Block extends Component {
           <input
             name="name"
             type="text"
-            value={this.props.name}
             defaultValue={this.props.name}
-            onChange={(e) => {
-              this.props.handleUpdate(
-                this.props.target,
-                this.props.index,
-                e.target.value
-              );
-            }}
             className="p-block__input"
           />
         </div>
@@ -68,4 +60,4 @@ class Block extends Component {
   }
 }
 
-export default dragSource(dropTarget(Block));
+export default dragSource(dropTarget(DragItem));

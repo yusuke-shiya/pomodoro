@@ -14,6 +14,7 @@ class Task extends Component {
             handleAdd={this.props.handleAdd}
             handleUpdate={this.props.handleUpdate}
             data={this.props.tasks}
+            onDrop={this.props.onDrop}
             target="tasks"
           />
           <BlockTable

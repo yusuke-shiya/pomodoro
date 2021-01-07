@@ -30,8 +30,6 @@ class App extends Component {
     const items = this.state.tasks;
     const toItem = items[toId];
     const fromItem = items[fromId];
-    console.log("toItemは", toItem);
-    console.log("fromItemは", fromItem);
     items[toId] = fromItem;
     items[fromId] = toItem;
     this.setState({ tasks: items });
@@ -96,9 +94,7 @@ class App extends Component {
         const random = Math.floor(Math.random() * this.state.treats.length);
         const treasure = this.state.treats[random];
         const treats = this.state.treats.concat();
-        console.log("取り出す前は", this.state.treats);
         treats.splice(random, 1);
-        console.log("spliceしたあとは", this.state.treats);
         await this.setState({
           lastTask,
           treasure,
@@ -109,8 +105,6 @@ class App extends Component {
           second: 10,
           isBreak: true,
         });
-        console.log("取り出したのは", this.state.treasure);
-        console.log("取り出したあとは", this.state.treats);
         this.props.history.push({
           pathname: "/break",
           state: {

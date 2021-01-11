@@ -14,7 +14,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: ["新規タスク"],
+      tasks: [],
+      taskOptions: ["新規タスク"],
       treats: ["ごほうび"],
       isStart: false,
       time: 0,
@@ -39,7 +40,7 @@ class App extends Component {
     switch (target) {
       case "tasks":
         this.setState({
-          tasks: this.state.tasks.concat("新規タスク"),
+          taskOptions: this.state.taskOptions.concat("新規タスク"),
         });
         break;
       case "treats":
@@ -155,6 +156,7 @@ class App extends Component {
                 handleAdd={this.handleAdd}
                 handleUpdate={this.handleUpdate}
                 tasks={this.state.tasks}
+                taskOptions={this.state.taskOptions}
                 treats={this.state.treats}
                 target="tasks"
                 onDrop={this.onDrop}

@@ -15,8 +15,9 @@ class App extends Component {
     super(props);
     this.state = {
       tasks: [],
+      treats: [],
       taskOptions: ["新規タスク"],
-      treats: ["ごほうび"],
+      treatOptions: ["ごほうび"],
       isStart: false,
       time: 0,
       second: 5,
@@ -27,25 +28,35 @@ class App extends Component {
     };
   }
 
-  onDrop = (toId, fromId) => {
-    const items = this.state.tasks;
+  onDrop = (toId, fromId, target) => {
+    const items = this.state[target];
     const toItem = items[toId];
     const fromItem = items[fromId];
     items[toId] = fromItem;
     items[fromId] = toItem;
-    this.setState({ tasks: items });
+
+    switch (target) {
+      case "taskOptions":
+        this.setState({ taskOptions: items });
+        break;
+      case "treatOptions":
+        this.setState({ treatOptions: items });
+        break;
+      default:
+        break;
+    }
   };
 
   handleAdd = (target) => {
     switch (target) {
-      case "tasks":
+      case "taskOptions":
         this.setState({
           taskOptions: this.state.taskOptions.concat("新規タスク"),
         });
         break;
-      case "treats":
+      case "treatOptions":
         this.setState({
-          treats: this.state.treats.concat("ごほうび"),
+          treatOptions: this.state.treatOptions.concat("ごほうび"),
         });
         break;
       default:
@@ -57,14 +68,14 @@ class App extends Component {
       return loopIndex === index ? value : task;
     });
     switch (target) {
-      case "tasks":
+      case "taskOptions":
         this.setState({
-          tasks: newState,
+          taskOptions: newState,
         });
         break;
-      case "treats":
+      case "treatOptions":
         this.setState({
-          treats: newState,
+          treatOptions: newState,
         });
         break;
       default:
@@ -158,7 +169,7 @@ class App extends Component {
                 tasks={this.state.tasks}
                 taskOptions={this.state.taskOptions}
                 treats={this.state.treats}
-                target="tasks"
+                treatOptions={this.state.treatOptions}
                 onDrop={this.onDrop}
               />
             )}

@@ -19,13 +19,14 @@ class Task extends Component {
             handleUpdate={this.props.handleUpdate}
             data={this.props.taskOptions}
             onDrop={this.props.onDrop}
-            target="tasks"
+            target="taskOptions"
           />
           <BlockTable
             handleAdd={this.props.handleAdd}
             handleUpdate={this.props.handleUpdate}
-            data={this.props.treats}
-            target="treats"
+            data={this.props.treatOptions}
+            onDrop={this.props.onDrop}
+            target="treatOptions"
           />
         </div>
       </React.Fragment>

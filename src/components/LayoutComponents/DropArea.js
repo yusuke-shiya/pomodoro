@@ -6,6 +6,7 @@ class DropArea extends Component {
     return (
       <div className="p-dropArea">
         <TomatoTable tasks={this.props.tasks} />
+        <TomatoTable tasks={this.props.tasks} />
       </div>
     );
   }

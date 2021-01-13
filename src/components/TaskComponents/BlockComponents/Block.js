@@ -24,7 +24,7 @@ const dropTarget = DropTarget(
     drop(dropProps, monitor, dropComponent) {
       const dragProps = monitor.getItem();
       if (dropProps.index !== dragProps.index) {
-        dragProps.onDrop(dragProps.index, dropProps.index);
+        dragProps.onDrop(dragProps.index, dropProps.index, dragProps.target);
       }
     },
   },
@@ -52,7 +52,6 @@ class Block extends Component {
             name="name"
             type="text"
             value={this.props.name}
-            defaultValue={this.props.name}
             onChange={(e) => {
               this.props.handleUpdate(
                 this.props.target,

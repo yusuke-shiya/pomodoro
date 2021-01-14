@@ -47,6 +47,22 @@ class App extends Component {
     }
   };
 
+  onDropAdd = (name, target) => {
+    const items = this.state[target];
+    items.push(name);
+
+    switch (target) {
+      case "tasks":
+        this.setState({ tasks: items });
+        break;
+      case "treats":
+        this.setState({ treats: items });
+        break;
+      default:
+        break;
+    }
+  };
+
   handleAdd = (target) => {
     switch (target) {
       case "taskOptions":
@@ -171,6 +187,7 @@ class App extends Component {
                 treats={this.state.treats}
                 treatOptions={this.state.treatOptions}
                 onDrop={this.onDrop}
+                onDropAdd={this.onDropAdd}
               />
             )}
           />

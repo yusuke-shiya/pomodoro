@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { DragDropContext } from "react-dnd";
+import HTML5Backend from "react-dnd-html5-backend";
 
 import BlockTable from "../TaskComponents/BlockComponents/BlockTable";
 import DropArea from "../LayoutComponents/DropArea";
@@ -7,7 +9,11 @@ class Task extends Component {
   render() {
     return (
       <React.Fragment>
-        <DropArea tasks={this.props.tasks} />
+        <DropArea
+          tasks={this.props.tasks}
+          treats={this.props.treats}
+          onDropAdd={this.props.onDropAdd}
+        />
         <div className="p-startButton">
           <div className="p-startButton__button">START</div>
         </div>
@@ -34,4 +40,4 @@ class Task extends Component {
   }
 }
 
-export default Task;
+export default DragDropContext(HTML5Backend)(Task);

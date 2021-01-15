@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import BlockTable from "../TaskComponents/BlockComponents/BlockTable";
-import TomatoTable from "../TaskComponents/TomatoComponents/TomatoTable";
 
 class Treat extends Component {
   render() {
@@ -14,7 +13,6 @@ class Treat extends Component {
           data={this.props.treats}
           target={this.props.target}
         />
-        <TomatoTable tasks={this.props.tasks} />
       </React.Fragment>
     );
   }

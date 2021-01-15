@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import TomatoTable from "../TaskComponents/TomatoComponents/TomatoTable";
+import TomatoTable from "../TaskComponents/BlockComponents/TaskTable";
 
 class DropArea extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { DropTarget } from "react-dnd";
-import Tomato from "./Tomato";
+import Task from "../BlockComponents/Task";
 
 const dropTarget = DropTarget(
   "item",
@@ -18,18 +18,18 @@ const dropTarget = DropTarget(
   }
 );
 
-class TomatoTable extends Component {
+class TaskTable extends Component {
   render() {
     const props = this.props;
-    let tomatos = [];
+    let tasks = [];
     if (props[props.target].length) {
       props[props.target].forEach((name, index) => {
-        tomatos.push(<Tomato name={name} time={25} key={index} />);
+        tasks.push(<Task name={name} target={props.target} key={index} />);
       });
     } else {
-      tomatos = (
-        <div className="p-tomatoTable__dropArea">
-          <span className="p-tomatoTable__dropArea__txt">
+      tasks = (
+        <div className="p-taskTable__dropArea">
+          <span className="p-taskTable__dropArea__txt">
             タスクを追加
             <br />
             してください
@@ -39,9 +39,9 @@ class TomatoTable extends Component {
     }
 
     return this.props.connectDropTarget(
-      <div className="p-tomatoTable">{tomatos}</div>
+      <div className="p-taskTable">{tasks}</div>
     );
   }
 }
 
-export default dropTarget(TomatoTable);
+export default dropTarget(TaskTable);

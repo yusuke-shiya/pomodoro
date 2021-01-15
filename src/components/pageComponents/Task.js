@@ -7,6 +7,11 @@ import DropArea from "../LayoutComponents/DropArea";
 
 class Task extends Component {
   render() {
+    const activeClass =
+      this.props.tasks.length === this.props.treats.length &&
+      this.props.tasks.length !== 0
+        ? " active"
+        : "";
     return (
       <React.Fragment>
         <DropArea
@@ -14,7 +19,7 @@ class Task extends Component {
           treats={this.props.treats}
           onDropAdd={this.props.onDropAdd}
         />
-        <div className="p-startButton">
+        <div className={"p-startButton" + activeClass}>
           <div className="p-startButton__button">START</div>
         </div>
         <div className="p-arrow"></div>

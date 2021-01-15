@@ -6,9 +6,6 @@ import Task from "./pageComponents/Task";
 import Treat from "./pageComponents/Treat";
 import Timer from "./pageComponents/Timer";
 import Break from "./pageComponents/Break";
-// import Steps from "./LayoutComponents/Steps";
-
-import SortableList from "./dnd/SortableList";
 
 class App extends Component {
   constructor(props) {
@@ -239,7 +236,6 @@ class App extends Component {
               />
             )}
           />
-          <Route exact path="/dnd" render={() => <SortableList />} />
         </Switch>
         {/* <Steps tasks={this.state.tasks} treats={this.state.treats} /> */}
       </div>

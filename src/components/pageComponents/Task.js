@@ -1,9 +1,18 @@
 import React, { Component } from "react";
-import { DragDropContext } from "react-dnd";
+import { DragDropContext, DragLayer } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
+import TouchBackend from "react-dnd-touch-backend";
 
 import BlockTable from "../TaskComponents/BlockComponents/BlockTable";
 import DropArea from "../LayoutComponents/DropArea";
+
+function isAndroid() {
+  return !!window.navigator.userAgent.match(/Android/);
+}
+
+function isIOS() {
+  return !!window.navigator.userAgent.match(/iPhone|iPad|iPod/);
+}
 
 class Task extends Component {
   render() {
@@ -45,4 +54,6 @@ class Task extends Component {
   }
 }
 
-export default DragDropContext(HTML5Backend)(Task);
+export default DragDropContext(
+  isAndroid() || isIOS() ? TouchBackend : HTML5Backend
+)(Task);

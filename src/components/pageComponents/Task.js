@@ -38,14 +38,12 @@ class Task extends Component {
           <div className="p-arrow"></div>
           <div className="p-arrow p-arrow--yellow"></div>
           <BlockTable
-            handleAdd={this.props.handleAdd}
             handleUpdate={this.props.handleUpdate}
             data={this.props.taskOptions}
             onDrop={this.props.onDrop}
             target="taskOptions"
           />
           <BlockTable
-            handleAdd={this.props.handleAdd}
             handleUpdate={this.props.handleUpdate}
             data={this.props.treatOptions}
             onDrop={this.props.onDrop}

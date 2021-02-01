@@ -8,7 +8,6 @@ class Treat extends Component {
       <React.Fragment>
         <h2 className="p-pageTitle">ごほうびを選んでください</h2>
         <BlockTable
-          handleAdd={this.props.handleAdd}
           handleUpdate={this.props.handleUpdate}
           data={this.props.treats}
           target={this.props.target}

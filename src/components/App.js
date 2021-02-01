@@ -59,23 +59,6 @@ class App extends Component {
         break;
     }
   };
-
-  handleAdd = (target) => {
-    switch (target) {
-      case "taskOptions":
-        this.setState({
-          taskOptions: this.state.taskOptions.concat("新規タスク"),
-        });
-        break;
-      case "treatOptions":
-        this.setState({
-          treatOptions: this.state.treatOptions.concat("ごほうび"),
-        });
-        break;
-      default:
-        break;
-    }
-  };
   handleRemove = (target, index) => {
     const state = this.state[target];
     state.splice(index, 1);
@@ -217,7 +200,6 @@ class App extends Component {
             path="/"
             render={() => (
               <Task
-                handleAdd={this.handleAdd}
                 handleRemove={this.handleRemove}
                 handleUpdate={this.handleUpdate}
                 handleShuffle={this.handleShuffle}
@@ -235,7 +217,6 @@ class App extends Component {
             path="/treat"
             render={() => (
               <Treat
-                handleAdd={this.handleAdd}
                 handleUpdate={this.handleUpdate}
                 tasks={this.state.tasks}
                 treats={this.state.treats}
@@ -248,7 +229,6 @@ class App extends Component {
             path="/timer"
             render={() => (
               <Timer
-                handleAdd={this.handleAdd}
                 handleUpdate={this.handleUpdate}
                 handleToggleStart={this.handleToggleStart}
                 tasks={this.state.tasks}
@@ -266,7 +246,6 @@ class App extends Component {
             path="/break"
             render={() => (
               <Break
-                handleAdd={this.handleAdd}
                 handleUpdate={this.handleUpdate}
                 lastTask={this.state.lastTask}
                 treasure={this.state.treasure}

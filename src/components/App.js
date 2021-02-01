@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 
 import Header from "./LayoutComponents/Header";
-import Task from "./pageComponents/Task";
-import Treat from "./pageComponents/Treat";
 import Timer from "./pageComponents/Timer";
-import Break from "./pageComponents/Break";
 
 class App extends Component {
   constructor(props) {
@@ -199,7 +196,7 @@ class App extends Component {
             exact
             path="/"
             render={() => (
-              <Task
+              <Timer
                 handleRemove={this.handleRemove}
                 handleUpdate={this.handleUpdate}
                 handleShuffle={this.handleShuffle}
@@ -209,51 +206,6 @@ class App extends Component {
                 treatOptions={this.state.treatOptions}
                 onDrop={this.onDrop}
                 onDropAdd={this.onDropAdd}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/treat"
-            render={() => (
-              <Treat
-                handleUpdate={this.handleUpdate}
-                tasks={this.state.tasks}
-                treats={this.state.treats}
-                target={"treats"}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/timer"
-            render={() => (
-              <Timer
-                handleUpdate={this.handleUpdate}
-                handleToggleStart={this.handleToggleStart}
-                tasks={this.state.tasks}
-                treats={this.state.treats}
-                target={"treats"}
-                time={this.state.time}
-                second={this.state.second}
-                isStart={this.state.isStart}
-                isBreak={this.state.isBreak}
-              />
-            )}
-          />
-          <Route
-            exact
-            path="/break"
-            render={() => (
-              <Break
-                handleUpdate={this.handleUpdate}
-                lastTask={this.state.lastTask}
-                treasure={this.state.treasure}
-                treats={this.state.treats}
-                target={"treats"}
-                time={this.state.time}
-                second={this.state.second}
-                isStart={this.state.isStart}
               />
             )}
           />

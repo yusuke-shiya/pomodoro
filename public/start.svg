@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="67" height="67" viewBox="0 0 67 67">
-  <g id="グループ_38" data-name="グループ 38" transform="translate(-154 -461)">
-    <g id="グループ_1" data-name="グループ 1" transform="translate(-8 -4)">
-      <g id="楕円形_2" data-name="楕円形 2" transform="translate(162 465)" fill="#ffbfbf" stroke="#707070" stroke-width="1">
-        <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
-        <circle cx="33.5" cy="33.5" r="33" fill="none"/>
-      </g>
-      <g id="多角形_1" data-name="多角形 1" transform="translate(170 490.5) rotate(-30)" fill="#707070">
-        <path d="M 32.15436172485352 29.5 L 0.8456379771232605 29.5 L 16.5 1.037523627281189 L 32.15436172485352 29.5 Z" stroke="none"/>
-        <path d="M 16.5 2.075046539306641 L 1.691276550292969 29 L 31.30872344970703 29 L 16.5 2.075046539306641 M 16.5 0 L 33 30 L 0 30 L 16.5 0 Z" stroke="none" fill="#707070"/>
-      </g>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8cd65d"/>
+      <stop offset="1" stop-color="#60bf24"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_38" data-name="グループ 38" transform="translate(-153 -334)">
+    <circle id="楕円形_13" data-name="楕円形 13" cx="35" cy="35" r="35" transform="translate(153 334)" fill="url(#linear-gradient)"/>
+    <text id="START" transform="translate(188 360.096)" fill="#fff" font-size="12" font-family="HiraKakuProN-W6, Hiragino Kaku Gothic ProN"><tspan x="-21.624" y="0">START</tspan></text>
+    <path id="多角形_9" data-name="多角形 9" d="M9.5,0,19,16H0Z" transform="translate(197.5 369.5) rotate(90)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
   </g>
 </svg>

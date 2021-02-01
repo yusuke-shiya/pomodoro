@@ -382,14 +382,6 @@ code {
 .p-startButton__button {
   position: relative;
   z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: #8cd65d;
-  color: #fff;
   cursor: pointer;
 }
 .p-startButton.active {

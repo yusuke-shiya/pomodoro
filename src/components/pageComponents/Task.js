@@ -32,7 +32,9 @@ class Task extends Component {
           handleShuffle={this.props.handleShuffle}
         />
         <div className={"p-startButton" + activeClass}>
-          <div className="p-startButton__button">START</div>
+          <div className="p-startButton__button">
+            <img src={`${process.env.PUBLIC_URL}/start.svg`} alt="" />
+          </div>
         </div>
         <div className="p-blockArea">
           <div className="p-arrow"></div>

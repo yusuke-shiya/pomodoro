@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Block from "./Block";
-import Add from "../../LayoutComponents/Add";
 
 class BlockTable extends Component {
   render() {
@@ -18,12 +17,7 @@ class BlockTable extends Component {
         />
       );
     });
-    return (
-      <div className="p-blockTable">
-        {blocks}
-        <Add handleAdd={props.handleAdd} target={this.props.target}></Add>
-      </div>
-    );
+    return <div className="p-blockTable">{blocks}</div>;
   }
 }
 

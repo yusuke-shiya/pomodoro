@@ -13,8 +13,8 @@ class App extends Component {
     this.state = {
       tasks: [],
       treats: [],
-      taskOptions: ["新規タスク"],
-      treatOptions: ["ごほうび"],
+      taskOptions: ["無題", "無題", "無題", "無題"],
+      treatOptions: ["無題", "無題", "無題", "無題"],
       isStart: false,
       time: 0,
       second: 5,
@@ -75,6 +75,46 @@ class App extends Component {
       default:
         break;
     }
+  };
+  handleRemove = (target, index) => {
+    const state = this.state[target];
+    state.splice(index, 1);
+    switch (target) {
+      case "tasks":
+        this.setState({
+          tasks: state,
+        });
+        break;
+      case "treats":
+        this.setState({
+          treats: state,
+        });
+        break;
+      default:
+        break;
+    }
+  };
+  handleShuffle = () => {
+    const tasks = this.state.tasks;
+    const treats = this.state.treats;
+
+    if (!tasks.length || !treats.length) {
+      return;
+    }
+
+    for (let i = tasks.length; 1 < i; i--) {
+      const random = Math.floor(Math.random() * i);
+      [tasks[random], tasks[i - 1]] = [tasks[i - 1], tasks[random]];
+    }
+    for (let i = treats.length; 1 < i; i--) {
+      const random = Math.floor(Math.random() * i);
+      [treats[random], treats[i - 1]] = [treats[i - 1], treats[random]];
+    }
+
+    this.setState({
+      tasks,
+      treats,
+    });
   };
   handleUpdate = (target, index, value) => {
     const newState = this.state[target].map((task, loopIndex) => {
@@ -178,7 +218,9 @@ class App extends Component {
             render={() => (
               <Task
                 handleAdd={this.handleAdd}
+                handleRemove={this.handleRemove}
                 handleUpdate={this.handleUpdate}
+                handleShuffle={this.handleShuffle}
                 tasks={this.state.tasks}
                 taskOptions={this.state.taskOptions}
                 treats={this.state.treats}

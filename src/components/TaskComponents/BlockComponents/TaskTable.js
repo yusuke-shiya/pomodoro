@@ -24,7 +24,15 @@ class TaskTable extends Component {
     let tasks = [];
     if (props[props.target].length) {
       props[props.target].forEach((name, index) => {
-        tasks.push(<Task name={name} target={props.target} key={index} />);
+        tasks.push(
+          <Task
+            name={name}
+            target={props.target}
+            index={index}
+            key={index}
+            handleRemove={props.handleRemove}
+          />
+        );
       });
     } else {
       tasks = (
@@ -39,7 +47,14 @@ class TaskTable extends Component {
     }
 
     return this.props.connectDropTarget(
-      <div className="p-taskTable">{tasks}</div>
+      <div className={`p-taskTable${this.props.activeClass}`}>
+        <div
+          className={`p-taskTable__title p-taskTable__title--${props.target}`}
+        >
+          {props.target === "tasks" ? "TASK" : "GOHOBI"}
+        </div>
+        {tasks}
+      </div>
     );
   }
 }

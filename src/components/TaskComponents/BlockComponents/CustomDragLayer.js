@@ -2,6 +2,7 @@ import * as React from "react";
 import { DragLayer } from "react-dnd";
 
 function collect(monitor) {
+  console.log(monitor);
   return {
     item: monitor.getItem(),
     itemType: monitor.getItemType(),

@@ -1,20 +1,30 @@
 import React, { Component } from "react";
 
-import TomatoTable from "../TaskComponents/BlockComponents/TaskTable";
+import TaskTable from "../TaskComponents/BlockComponents/TaskTable";
 
 class DropArea extends Component {
   render() {
     return (
       <div className="p-dropArea">
-        <TomatoTable
+        <div
+          className={`p-shuffleButton${this.props.activeClass}`}
+          onClick={this.props.handleShuffle}
+        >
+          <img src={`${process.env.PUBLIC_URL}/shuffle.svg`} alt="" />
+        </div>
+        <TaskTable
+          activeClass={this.props.activeClass}
           tasks={this.props.tasks}
           onDropAdd={this.props.onDropAdd}
           target="tasks"
+          handleRemove={this.props.handleRemove}
         />
-        <TomatoTable
+        <TaskTable
+          activeClass={this.props.activeClass}
           treats={this.props.treats}
           onDropAdd={this.props.onDropAdd}
           target="treats"
+          handleRemove={this.props.handleRemove}
         />
       </div>
     );

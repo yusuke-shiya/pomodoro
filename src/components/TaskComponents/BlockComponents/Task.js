@@ -10,6 +10,10 @@ class Task extends Component {
         <div className="p-task__content p-task__content">{this.props.name}</div>
         <img className="p-task__img__calyx" src={calyx} alt="" />
         <img className="p-task__img" src={background} alt="" />
+        <div
+          className="p-task__minus"
+          onClick={this.props.handleRemove.bind(null, target, this.props.index)}
+        ></div>
       </div>
     );
   }

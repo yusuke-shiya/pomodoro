@@ -3,8 +3,8 @@ import { DragDropContext } from "react-dnd";
 import HTML5Backend from "react-dnd-html5-backend";
 import TouchBackend from "react-dnd-touch-backend";
 
-import BlockTable from "../TaskComponents/BlockComponents/BlockTable";
-import DropArea from "../LayoutComponents/DropArea";
+import BlockTable from "../../TaskComponents/BlockComponents/BlockTable";
+import DropArea from "../../LayoutComponents/DropArea";
 
 function isAndroid() {
   return !!window.navigator.userAgent.match(/Android/);
@@ -22,7 +22,7 @@ class Task extends Component {
         ? " active"
         : "";
     return (
-      <React.Fragment>
+      <div className="p-page__content">
         <DropArea
           activeClass={activeClass}
           tasks={this.props.tasks}
@@ -52,7 +52,7 @@ class Task extends Component {
             target="treatOptions"
           />
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

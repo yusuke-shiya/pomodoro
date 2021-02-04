@@ -68,7 +68,7 @@ code {
   max-width: 375px;
   margin: auto;
   background: #fff;
-  overflow: scroll;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
@@ -389,6 +389,7 @@ code {
   position: relative;
   width: 100%;
   height: calc(100% - var(--header-height));
+  transition: 0.2s;
 }
 .p-page__content {
   position: absolute;
@@ -401,4 +402,18 @@ code {
   transform: translateX(100%);
 }
 .p-tomato {
+  padding: 16px;
+}
+.p-tomato__arrow {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.3vw;
+  color: #000;
+  line-height: 1;
+}
+.p-tomato__timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 30px));
 }

@@ -22,7 +22,7 @@ class Task extends Component {
         ? " active"
         : "";
     return (
-      <div className="p-page__content">
+      <React.Fragment>
         <DropArea
           activeClass={activeClass}
           tasks={this.props.tasks}
@@ -32,7 +32,10 @@ class Task extends Component {
           handleShuffle={this.props.handleShuffle}
         />
         <div className={"p-startButton" + activeClass}>
-          <div className="p-startButton__button">
+          <div
+            className="p-startButton__button"
+            onClick={this.props.handlePage.bind("_", 2)}
+          >
             <img src={`${process.env.PUBLIC_URL}/start.svg`} alt="" />
           </div>
         </div>
@@ -52,7 +55,7 @@ class Task extends Component {
             target="treatOptions"
           />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

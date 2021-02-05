@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8cd65d"/>
+      <stop offset="1" stop-color="#60bf24"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_40" data-name="グループ 40" transform="translate(-153 -334)">
+    <circle id="楕円形_13" data-name="楕円形 13" cx="17" cy="17" r="17" transform="translate(153 334)" fill="url(#linear-gradient)"/>
+    <path id="多角形_9" data-name="多角形 9" d="M6.5,0,13,11H0Z" transform="translate(176.5 344.5) rotate(90)" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

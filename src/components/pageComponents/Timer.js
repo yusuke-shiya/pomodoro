@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Task from "./ChildComponents/Task";
 import Tomato from "./ChildComponents/Tomato";
+import StartStop from "../LayoutComponents/StartStop";
 
 class Timer extends Component {
   constructor(props) {
@@ -37,7 +38,15 @@ class Timer extends Component {
           />
         </div>
         <div className="p-page__content">
-          <Tomato handlePage={this.handlePage} />
+          <Tomato
+            handlePage={this.handlePage}
+            currentTask={this.props.tasks[0]}
+            time={this.props.time * 60 + this.props.second}
+          />
+          <StartStop
+            handleToggleStart={this.props.handleToggleStart}
+            isStart={this.props.isStart}
+          />
         </div>
       </div>
     );

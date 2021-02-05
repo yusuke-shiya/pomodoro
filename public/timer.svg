@@ -7,7 +7,7 @@
   </defs>
   <g id="グループ_43" data-name="グループ 43" transform="translate(-81.5 -227)">
     <rect id="長方形_8" data-name="長方形 8" width="197" height="163.807" rx="35" transform="translate(93 235.003)" fill="url(#linear-gradient)"/>
-    <path id="パス_18" data-name="パス 18" d="M53.031,3.247,38.61,1.376l-5.032,4.7L23.32,9.984,35.27,12.812l3.4,6.927,14.361-3.388L65.794,19.74l5.329-6.927,9.963-2.828L73.207,6.076l-4.585-4.7Z" transform="translate(135.68 225.624)" fill="#3e9f00"/>
+    <path id="パス_18" data-name="パス 18" d="M53.031,3.247,38.61,1.376l-5.032,4.7L23.32,9.984,35.27,12.812l3.4,6.927,14.361-3.388L65.794,19.74l5.329-6.927,9.963-2.828L73.207,6.076l-4.585-4.7Z" transform="translate(135.68 225.624)" fill="none"/>
     <line id="線_3" data-name="線 3" x2="223" transform="translate(81.5 247.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
     <line id="線_4" data-name="線 4" x2="223" transform="translate(81.5 257.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
     <line id="線_5" data-name="線 5" x2="223" transform="translate(81.5 267.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
@@ -24,6 +24,5 @@
     <line id="線_16" data-name="線 16" x2="223" transform="translate(81.5 377.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
     <line id="線_17" data-name="線 17" x2="223" transform="translate(81.5 387.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
     <line id="線_18" data-name="線 18" x2="223" transform="translate(81.5 397.5)" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
-    <text id="仕事" transform="translate(188 326)" fill="#fff" font-size="29" font-family="HiraKakuProN-W6, Hiragino Kaku Gothic ProN"><tspan x="-29" y="0">仕事</tspan></text>
   </g>
 </svg>

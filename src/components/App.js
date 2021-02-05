@@ -14,7 +14,7 @@ class App extends Component {
       treatOptions: ["無題", "無題", "無題", "無題"],
       isStart: false,
       time: 0,
-      second: 5,
+      second: 30,
       timerId: null,
       lastTask: null,
       treasure: null,
@@ -135,44 +135,44 @@ class App extends Component {
     if (!this.state.time && !this.state.second) {
       clearInterval(this.state.timerId);
       if (this.state.isStart) {
-        const lastTask = this.state.tasks[0];
-        const random = Math.floor(Math.random() * this.state.treats.length);
-        const treasure = this.state.treats[random];
-        const treats = this.state.treats.concat();
-        treats.splice(random, 1);
-        await this.setState({
-          lastTask,
-          treasure,
-          isStart: false,
-          tasks: this.state.tasks.slice(1),
-          treats,
-          time: 0,
-          second: 10,
-          isBreak: true,
-        });
-        this.props.history.push({
-          pathname: "/break",
-          state: {
-            tasks: this.props.tasks,
-            treats: this.props.treats,
-          },
-        });
+        // const lastTask = this.state.tasks[0];
+        // const random = Math.floor(Math.random() * this.state.treats.length);
+        // const treasure = this.state.treats[random];
+        // const treats = this.state.treats.concat();
+        // treats.splice(random, 1);
+        // await this.setState({
+        //   lastTask,
+        //   treasure,
+        //   isStart: false,
+        //   tasks: this.state.tasks.slice(1),
+        //   treats,
+        //   time: 0,
+        //   second: 10,
+        //   isBreak: true,
+        // });
+        // this.props.history.push({
+        //   pathname: "/break",
+        //   state: {
+        //     tasks: this.props.tasks,
+        //     treats: this.props.treats,
+        //   },
+        // });
       } else if (this.state.isBreak) {
-        await this.setState({
-          isStart: true,
-          isBreak: false,
-          time: 0,
-          second: 10,
-        });
-        this.props.history.push({
-          pathname: "/timer",
-          state: {
-            tasks: this.props.tasks,
-            treats: this.props.treats,
-          },
-        });
+        // await this.setState({
+        //   isStart: true,
+        //   isBreak: false,
+        //   time: 0,
+        //   second: 10,
+        // });
+        // this.props.history.push({
+        //   pathname: "/timer",
+        //   state: {
+        //     tasks: this.props.tasks,
+        //     treats: this.props.treats,
+        //   },
+        // });
       }
-      this.handleTimer();
+      // this.handleTimer();
       return;
     }
     if (!this.state.second) {
@@ -200,6 +200,10 @@ class App extends Component {
                 handleRemove={this.handleRemove}
                 handleUpdate={this.handleUpdate}
                 handleShuffle={this.handleShuffle}
+                handleToggleStart={this.handleToggleStart}
+                isStart={this.state.isStart}
+                time={this.state.time}
+                second={this.state.second}
                 tasks={this.state.tasks}
                 taskOptions={this.state.taskOptions}
                 treats={this.state.treats}

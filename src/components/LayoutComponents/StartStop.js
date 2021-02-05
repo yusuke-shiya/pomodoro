@@ -8,7 +8,7 @@ class Start extends Component {
       <div onClick={handleToggleStart} className="p-start">
         <img
           className="p-start__icon"
-          src={`${process.env.PUBLIC_URL}/${src}.svg`}
+          src={`${process.env.PUBLIC_URL}/${src}-timer.svg`}
           alt=""
         />
       </div>

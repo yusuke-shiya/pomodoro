@@ -336,6 +336,13 @@ code {
   margin-right: 4px;
 }
 
+.p-start {
+  position: absolute;
+  left: 50%;
+  bottom: 23px;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+}
 .p-start__icon {
   display: block;
   margin: auto;
@@ -407,7 +414,7 @@ code {
 .p-tomato__arrow {
   display: inline-block;
   cursor: pointer;
-  font-size: 1.3vw;
+  font-size: 26px;
   color: #000;
   line-height: 1;
 }
@@ -416,4 +423,31 @@ code {
   top: 50%;
   left: 50%;
   transform: translate(-50%, calc(-50% - 30px));
+}
+.p-tomato__timer__calyx {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.p-tomato__timer__name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 29px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+.p-tomato__timer__overlay {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: #fff;
 }

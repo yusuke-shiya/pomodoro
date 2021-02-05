@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8cd65d"/>
+      <stop offset="1" stop-color="#60bf24"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_40" data-name="グループ 40" transform="translate(-153 -334)">
+    <circle id="楕円形_13" data-name="楕円形 13" cx="17" cy="17" r="17" transform="translate(153 334)" fill="url(#linear-gradient)"/>
+    <g id="グループ_44" data-name="グループ 44" transform="translate(0 1)">
+      <rect id="長方形_85" data-name="長方形 85" width="5" height="13" transform="translate(163 344)" fill="#fff"/>
+      <rect id="長方形_86" data-name="長方形 86" width="5" height="13" transform="translate(172 344)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

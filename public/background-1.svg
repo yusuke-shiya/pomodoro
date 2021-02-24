@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="333" viewBox="0 0 375 333">
+  <g id="グループ_47" data-name="グループ 47" transform="translate(-1063.748 -180)">
+    <path id="長方形_88" data-name="長方形 88" d="M0,0H0Z" transform="translate(1063.748 180)" fill="#ed4720"/>
+    <g id="グループ_49" data-name="グループ 49">
+      <path id="長方形_88-2" data-name="長方形 88" d="M1063.748,180h375V479.06L1392.681,513H1111.792l-48.043-35.4Z" fill="#fff476"/>
+      <g id="グループ_48" data-name="グループ 48">
+        <path id="パス_21" data-name="パス 21" d="M1134.376,180,1202.8,513h37.088l-31.166-333Z" fill="#ffffc3"/>
+        <path id="パス_22" data-name="パス 22" d="M1063.748,180V350.614L1161.556,513h24.592L1066.061,180Z" fill="#ffffc3"/>
+        <path id="パス_23" data-name="パス 23" d="M1063.748,477.6l48.043,35.4h31.494l-79.538-93.282Z" fill="#ffffc3"/>
+        <path id="パス_24" data-name="パス 24" d="M1295.747,180l-31.166,333h37.088L1370.1,180Z" fill="#ffffc3"/>
+        <path id="パス_25" data-name="パス 25" d="M1438.748,180h-.337L1318.324,513h24.592l95.832-159.105Z" fill="#ffffc3"/>
+        <path id="パス_26" data-name="パス 26" d="M1438.748,422.035,1361.186,513h31.495l46.067-33.94Z" fill="#ffffc3"/>
+      </g>
+    </g>
+  </g>
+</svg>

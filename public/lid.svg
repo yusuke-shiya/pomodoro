@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="285.74" height="142.871" viewBox="0 0 285.74 142.871">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f4f4f4"/>
+      <stop offset="1" stop-color="#e0e0e0"/>
+    </linearGradient>
+  </defs>
+  <g id="グループ_51" data-name="グループ 51" transform="translate(-43.56 -146)">
+    <path id="パス_19" data-name="パス 19" d="M42.548,0H243.168c23.438,0,42.439,24.516,42.439,54.757s.036,54.431,0,54.757c0,0-7.776,16.8-144.5,16.8s-141-16.8-141-16.8c-.511-.381,0-24.516,0-54.757S19.11,0,42.548,0Z" transform="translate(43.678 162.561)" fill="url(#linear-gradient)"/>
+    <path id="パス_6" data-name="パス 6" d="M.007,0H18.2s-.071,15.683,0,15.658c-4.547,3.914-13.641,3.914-18.188,0C-.019,15.628.007,0,.007,0Z" transform="translate(176.519 155.873)" fill="#e5b900"/>
+    <ellipse id="楕円形_5" data-name="楕円形 5" cx="21.5" cy="8.5" rx="21.5" ry="8.5" transform="translate(164 146)" fill="#e5b900"/>
+  </g>
+</svg>

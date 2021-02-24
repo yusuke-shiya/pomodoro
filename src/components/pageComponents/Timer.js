@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Task from "./ChildComponents/Task";
 import Tomato from "./ChildComponents/Tomato";
+import Treat from "./ChildComponents/Treat";
 import StartStop from "../LayoutComponents/StartStop";
 
 class Timer extends Component {
@@ -18,7 +19,7 @@ class Timer extends Component {
       lastTask: null,
       treasure: null,
       isBreak: false,
-      currentPage: 1,
+      currentPage: 3,
     };
   }
 
@@ -219,7 +220,9 @@ class Timer extends Component {
             isStart={this.state.isStart}
           />
         </div>
-        <div className="p-page__content">ごほうびページ</div>
+        <div className="p-page__content">
+          <Treat currentPage={this.state.currentPage} />
+        </div>
       </div>
     );
   }

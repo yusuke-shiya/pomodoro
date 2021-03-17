@@ -471,3 +471,58 @@ code {
   height: 100%;
   object-fit: cover;
 }
+.p-treat__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.p-treat__content__itemWrapper {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+}
+.p-treat__content__item {
+  position: relative;
+  width: 240px;
+  border: 3px solid #e5b928;
+  border-radius: 10px;
+  background: #fff;
+  padding: 29px;
+  font-size: 27px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  flex-shrink: 0;
+}
+.p-treat__content__lid {
+  position: relative;
+  z-index: 2;
+  top: 27px;
+  left: 5px;
+  transition: 0.3s;
+}
+.p-treat__content__lid.open {
+  transform: translateY(-150px);
+}
+.p-treat__content__dish {
+  position: relative;
+  bottom: 27px;
+}
+.p-treat__back {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+}
+.p-treat__back.active {
+  display: block;
+  cursor: pointer;
+}

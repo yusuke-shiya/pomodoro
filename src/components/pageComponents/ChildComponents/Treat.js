@@ -14,7 +14,7 @@ class Treat extends Component {
       } else {
         clearInterval(animateInterval);
       }
-    }, 300);
+    }, 500);
   };
   componentDidMount() {
     this.animateBackground();
@@ -33,6 +33,20 @@ class Treat extends Component {
             alt=""
             style={{ opacity: `${this.state.background ? 1 : 0}` }}
           />
+        </div>
+        <div className="p-treat__content">
+          <div className="p-treat__content__lid open">
+            <img src={`${process.env.PUBLIC_URL}/lid.svg`} alt="" />
+          </div>
+          <div className="p-treat__content__itemWrapper">
+            <div className="p-treat__content__item">ポッキー3本</div>
+          </div>
+          <div className="p-treat__content__dish">
+            <img src={`${process.env.PUBLIC_URL}/dish.svg`} alt="" />
+          </div>
+        </div>
+        <div className="p-treat__back active">
+          <img src={`${process.env.PUBLIC_URL}/back.svg`} alt="" />
         </div>
       </div>
     );

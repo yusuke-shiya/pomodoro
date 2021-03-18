@@ -12,14 +12,14 @@ class Timer extends Component {
       treats: [],
       taskOptions: ["無題", "無題", "無題", "無題"],
       treatOptions: ["無題", "無題", "無題", "無題"],
-      isStart: false,
+      isStart: true,
       time: 0,
-      second: 30,
+      second: 5,
       timerId: null,
       lastTask: null,
       treasure: null,
       isBreak: false,
-      currentPage: 3,
+      currentPage: 1,
     };
   }
 
@@ -136,6 +136,10 @@ class Timer extends Component {
   countdown = async () => {
     if (!this.state.time && !this.state.second) {
       clearInterval(this.state.timerId);
+      this.setState({
+        time: 0,
+        second: 5,
+      });
       if (this.state.isStart) {
         const lastTask = this.state.tasks[0];
         const random = Math.floor(Math.random() * this.state.treats.length);
@@ -149,26 +153,19 @@ class Timer extends Component {
           tasks: this.state.tasks.slice(1),
           treats,
           time: 0,
-          second: 10,
+          second: 5,
           isBreak: true,
           currentPage: 3,
         });
       } else if (this.state.isBreak) {
-        // await this.setState({
-        //   isStart: true,
-        //   isBreak: false,
-        //   time: 0,
-        //   second: 10,
-        // });
-        // this.props.history.push({
-        //   pathname: "/timer",
-        //   state: {
-        //     tasks: this.props.tasks,
-        //     treats: this.props.treats,
-        //   },
-        // });
+        await this.setState({
+          isStart: false,
+          isBreak: false,
+          time: 0,
+          second: 5,
+          currentPage: 2,
+        });
       }
-      // this.handleTimer();
       return;
     }
     if (!this.state.second) {
@@ -207,6 +204,7 @@ class Timer extends Component {
             onDrop={this.onDrop}
             onDropAdd={this.onDropAdd}
             handlePage={this.handlePage}
+            handleTimer={this.handleTimer}
           />
         </div>
         <div className="p-page__content">
@@ -221,7 +219,12 @@ class Timer extends Component {
           />
         </div>
         <div className="p-page__content">
-          <Treat currentPage={this.state.currentPage} />
+          <Treat
+            treasure={this.state.treasure}
+            currentPage={this.state.currentPage}
+            time={this.state.time * 60 + this.state.second}
+            handleTimer={this.handleTimer}
+          />
         </div>
       </div>
     );

@@ -34,7 +34,10 @@ class Task extends Component {
         <div className={"p-startButton" + activeClass}>
           <div
             className="p-startButton__button"
-            onClick={this.props.handlePage.bind("_", 2)}
+            onClick={() => {
+              this.props.handlePage(2);
+              this.props.handleTimer();
+            }}
           >
             <img src={`${process.env.PUBLIC_URL}/start.svg`} alt="" />
           </div>

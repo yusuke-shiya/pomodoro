@@ -16,19 +16,18 @@ class Treat extends Component {
       }
     }, 500);
   };
-  initialTime = this.props.time;
-  transition = 2000;
+  backPage = () => {
+    this.props.setState({ currentPage: 2, taskSecond: this.props.taskTime });
+  };
   componentDidUpdate(prevProps) {
-    // currentPageが3の時だけcomponentDidUpdateを走らせる
+    // currentPageが3の時だけ走らせる
     if (prevProps.currentPage !== this.props.currentPage) {
       if (this.props.currentPage === 3) {
         const lid = document.getElementById("js-openLid");
-        const backButton = document.getElementById("js-backButton");
         lid.classList.add("open");
         setTimeout(() => {
           this.props.handleTimer();
           this.animateBackground();
-          backButton.classList.add("active");
         }, this.transition);
       } else {
         const lid = document.getElementById("js-openLid");
@@ -37,7 +36,18 @@ class Treat extends Component {
         backButton.classList.remove("active");
       }
     }
+    // timeが0のときだけ走らせる
+    if (
+      this.props.currentPage === 3 &&
+      this.props.time === 0 &&
+      !this.props.isLast
+    ) {
+      const backButton = document.getElementById("js-backButton");
+      backButton.classList.add("active");
+    }
   }
+  initialTime = this.props.time;
+  transition = 2000;
   render() {
     return (
       <div className="p-treat">
@@ -77,7 +87,11 @@ class Treat extends Component {
             <img src={`${process.env.PUBLIC_URL}/dish.svg`} alt="" />
           </div>
         </div>
-        <div id="js-backButton" className="p-treat__back">
+        <div
+          id="js-backButton"
+          className="p-treat__back"
+          onClick={this.backPage}
+        >
           <img src={`${process.env.PUBLIC_URL}/back.svg`} alt="" />
         </div>
       </div>

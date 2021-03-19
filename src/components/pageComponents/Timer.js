@@ -13,8 +13,10 @@ class Timer extends Component {
       taskOptions: ["無題", "無題", "無題", "無題"],
       treatOptions: ["無題", "無題", "無題", "無題"],
       isStart: true,
-      time: 0,
-      second: 5,
+      taskTime: 0,
+      taskSecond: this.taskTime,
+      treatTime: 0,
+      treatSecond: this.treatTime,
       timerId: null,
       lastTask: null,
       treasure: null,
@@ -22,6 +24,11 @@ class Timer extends Component {
       currentPage: 1,
     };
   }
+
+  // タスクのタイマー
+  taskTime = 15;
+  // ご褒美タイマーの時間
+  treatTime = 10;
 
   onDrop = (toId, fromId, target) => {
     const items = this.state[target];
@@ -134,48 +141,68 @@ class Timer extends Component {
     }
   };
   countdown = async () => {
-    if (!this.state.time && !this.state.second) {
+    // タイマーが0のとき
+    if (!this.state.taskTime && !this.state.taskSecond && !this.state.isBreak) {
       clearInterval(this.state.timerId);
-      this.setState({
-        time: 0,
-        second: 5,
+      // タスクが終わったとき
+      const lastTask = this.state.tasks[0];
+      const random = Math.floor(Math.random() * this.state.treats.length);
+      const treasure = this.state.treats[random];
+      const treats = this.state.treats.concat();
+      treats.splice(random, 1);
+      await this.setState({
+        lastTask,
+        treasure,
+        isStart: false,
+        tasks: this.state.tasks.slice(1),
+        treats,
+        treatTime: 0,
+        treatSecond: this.treatTime,
+        isBreak: true,
+        currentPage: 3,
       });
-      if (this.state.isStart) {
-        const lastTask = this.state.tasks[0];
-        const random = Math.floor(Math.random() * this.state.treats.length);
-        const treasure = this.state.treats[random];
-        const treats = this.state.treats.concat();
-        treats.splice(random, 1);
-        await this.setState({
-          lastTask,
-          treasure,
-          isStart: false,
-          tasks: this.state.tasks.slice(1),
-          treats,
-          time: 0,
-          second: 5,
-          isBreak: true,
-          currentPage: 3,
-        });
-      } else if (this.state.isBreak) {
-        await this.setState({
-          isStart: false,
-          isBreak: false,
-          time: 0,
-          second: 5,
-          currentPage: 2,
+      return;
+    }
+    if (
+      !this.state.treatTime &&
+      !this.state.treatSecond &&
+      !this.state.isStart
+    ) {
+      clearInterval(this.state.timerId);
+      // 休憩が終わったとき
+      await this.setState({
+        isStart: false,
+        isBreak: false,
+      });
+      // 全てのタスクが終了していたら
+      if (!this.state.tasks.length) {
+        this.setState({
+          currentPage: 1,
         });
       }
       return;
     }
-    if (!this.state.second) {
+    if (this.state.taskTime && !this.state.taskSecond && this.state.isStart) {
       await this.setState({
-        time: this.state.time - 1,
-        second: 59,
+        taskTime: this.state.taskTime - 1,
+        taskSecond: 59,
       });
-    } else {
+    } else if (
+      this.state.treatTime &&
+      !this.state.treatSecond &&
+      this.state.isBreak
+    ) {
       await this.setState({
-        second: this.state.second - 1,
+        treatTime: this.state.treatTime - 1,
+        treatSecond: 59,
+      });
+    } else if (this.state.taskSecond && this.state.isStart) {
+      await this.setState({
+        taskSecond: this.state.taskSecond - 1,
+      });
+    } else if (this.state.treatSecond && this.state.isBreak) {
+      await this.setState({
+        treatSecond: this.state.treatSecond - 1,
       });
     }
   };
@@ -211,7 +238,7 @@ class Timer extends Component {
           <Tomato
             handlePage={this.handlePage}
             currentTask={this.state.tasks[0]}
-            time={this.state.time * 60 + this.state.second}
+            time={this.state.taskTime * 60 + this.state.taskSecond}
           />
           <StartStop
             handleToggleStart={this.handleToggleStart}
@@ -222,8 +249,11 @@ class Timer extends Component {
           <Treat
             treasure={this.state.treasure}
             currentPage={this.state.currentPage}
-            time={this.state.time * 60 + this.state.second}
+            time={this.state.treatTime * 60 + this.state.treatSecond}
             handleTimer={this.handleTimer}
+            isLast={this.state.tasks.length ? false : true}
+            setState={this.setState.bind(this)}
+            taskTime={this.taskTime}
           />
         </div>
       </div>

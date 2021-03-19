@@ -146,16 +146,13 @@ class Timer extends Component {
       clearInterval(this.state.timerId);
       // タスクが終わったとき
       const lastTask = this.state.tasks[0];
-      const random = Math.floor(Math.random() * this.state.treats.length);
-      const treasure = this.state.treats[random];
-      const treats = this.state.treats.concat();
-      treats.splice(random, 1);
+      const treasure = this.state.treats[0];
       await this.setState({
         lastTask,
         treasure,
         isStart: false,
         tasks: this.state.tasks.slice(1),
-        treats,
+        treats: this.state.treats.slice(1),
         treatTime: 0,
         treatSecond: this.treatTime,
         isBreak: true,
@@ -232,6 +229,7 @@ class Timer extends Component {
             onDropAdd={this.onDropAdd}
             handlePage={this.handlePage}
             handleTimer={this.handleTimer}
+            setState={this.setState.bind(this)}
           />
         </div>
         <div className="p-page__content">
@@ -239,6 +237,8 @@ class Timer extends Component {
             handlePage={this.handlePage}
             currentTask={this.state.tasks[0]}
             time={this.state.taskTime * 60 + this.state.taskSecond}
+            handleTimer={this.handleTimer}
+            setState={this.setState.bind(this)}
           />
           <StartStop
             handleToggleStart={this.handleToggleStart}

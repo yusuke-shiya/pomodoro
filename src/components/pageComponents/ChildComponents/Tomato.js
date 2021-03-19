@@ -10,7 +10,13 @@ class Tomato extends Component {
       <div className="p-tomato">
         <div
           className="p-tomato__arrow"
-          onClick={this.props.handlePage.bind("_", 1)}
+          onClick={async () => {
+            await this.props.setState({
+              isStart: false,
+            });
+            this.props.handleTimer();
+            this.props.handlePage(1);
+          }}
         >
           &lt;
         </div>

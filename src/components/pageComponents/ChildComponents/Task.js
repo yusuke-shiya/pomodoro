@@ -34,7 +34,10 @@ class Task extends Component {
         <div className={"p-startButton" + activeClass}>
           <div
             className="p-startButton__button"
-            onClick={() => {
+            onClick={async () => {
+              await this.props.setState({
+                isStart: true,
+              });
               this.props.handlePage(2);
               this.props.handleTimer();
             }}
